@@ -1,23 +1,25 @@
 import random
+
 responses = {
   "Hello":["Hello!","Hi there!","Hey!"],
   "how are you": ["I'm good,thanks!","I'm doing well.", "I'm fine,how about you?"],
   "what's your name": ["I'm a chatbot,","you can call me chatbot.", "I don't have a name, but you can call me anything,"],
   "bye":["Goodbye!", "see you later!","bye! have a great day!"],
   "default": ["I'm not sure I understand.""could you please rephrase that?", "I don't have an answer for that."]
-  }
-  def get_response(user_input):
-      user_input=user_input.lower()
-      for key,value in response.items():
-          if key in user_input:
-             return random.choice(value)
-      return random.choice(responses["default"])
-  print("chatbot:Hello! How can I help you today?")
-  while true:
-        user_input = input("you: ").strip()
-        if user_input.lower() =="exit":
-           print("chatbot: Good bye!")
-           break
-        response = get_response(user_input)
-        print("chatbot:",response)
-             
+}
+
+def get_response(user_input):
+    user_input=user_input.lower()
+    for key,value in response.items():
+        if key in user_input:
+            return random.choice(value)
+    return random.choice(responses["default"])
+
+print("chatbot:Hello! How can I help you today?")
+while True:
+    user_input = input("you: ").strip()
+    if user_input.lower() =="exit":
+        print("chatbot: Good bye!")
+        break
+    response = get_response(user_input)
+    print("chatbot:",response)
